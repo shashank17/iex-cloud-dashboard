@@ -1,1 +1,3 @@
-IEX_TOKEN = 'sk_your_iex_token'
+IEX_TOKEN = 'pk_a90d9f537768487cb94c0a569b623440'
+# IEX_TOKEN = 'Tpk_0d86b559558d4860a55abf3f4ff857f8'
+

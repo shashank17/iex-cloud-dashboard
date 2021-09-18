@@ -7,6 +7,8 @@ class IEXStock:
             self.BASE_URL = 'https://cloud.iexapis.com/v1'
         else:
             self.BASE_URL = 'https://sandbox.iexapis.com/v1'
+            # self.BASE_URL = 'https://sandbox.iexapis.com'
+
         
         self.token = token
         self.symbol = symbol
@@ -31,6 +33,7 @@ class IEXStock:
 
     def get_stats(self):
         url = f"{self.BASE_URL}/stock/{self.symbol}/advanced-stats?token={self.token}"
+        print(url)
         r = requests.get(url)
         
         return r.json()
@@ -58,4 +61,26 @@ class IEXStock:
         r = requests.get(url)
 
         return r.json()
+
     
+    def get_balancesheet(self, last = 1):
+        url = f"{self.BASE_URL}/stock/{self.symbol}/balance-sheet?period=annual&last={last}&token={self.token}"
+        r = requests.get(url)
+
+        return r.json()
+    
+    def get_cashflow(self, last = 1):
+        url = f"{self.BASE_URL}/stock/{self.symbol}/cash-flow?period=annual&last={last}&token={self.token}"
+        r = requests.get(url)
+
+        return r.json()
+    
+    def get_income(self, last = 1):
+        url = f"{self.BASE_URL}/stock/{self.symbol}/income?period=annual&last={last}&token={self.token}"
+        r = requests.get(url)
+
+        return r.json()
+    
+    
+        
+        
